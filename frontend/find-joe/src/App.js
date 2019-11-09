@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import './App.css';
 import ApolloClient from 'apollo-boost';
-import {ApolloProvider} from '@apollo/react-hooks';
+import {ApolloProvider} from 'react-apollo';
 import LocationDetails from './Components/LocationDetails';
 
 
 const client = new ApolloClient({
-  uri: 'https://localhost:4000', // Endpoint that we are making request queries to.
+  uri: 'http://localhost:4000/', // Endpoint that we are making request queries to.
 });
 
 
