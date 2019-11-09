@@ -6,19 +6,29 @@ import { testQuery } from '../Queries/queries';
 
 class LocationDetails extends Component {
     
-    constructor(props) {
-        super(props);
-
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
 
 
     render() {
-      //  console.log(this.props);
-        return(
-            <div>
-                <p></p>
-            </div>
-        );
+        let data = this.props.data;
+        console.log(data);
+
+        if (data.loading === true || data.test === undefined) {
+            return(
+                <div><p>Loading...</p></div>
+            );
+        } else {
+            return(
+                <div>
+                    <p>{data.test}</p>
+                </div>
+
+            );
+        }
+        //return(<div></div>);
+        
     }
 
 }
