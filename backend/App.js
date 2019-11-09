@@ -8,9 +8,14 @@ type Query {
 
 const resolvers = {
 	Query: {
-		test: () => {return "temp"},
+		test: () => printalso(),
 	},
 };
+
+let printalso = () => {
+	console.log("hey")
+	return "temp"
+}
 
 const server = new ApolloServer( { 
 	typeDefs: schema, 

@@ -2,9 +2,8 @@ import { gql } from "apollo-boost";
 
 const testQuery = gql` 
 {
-    getTest {
-        test
-    }
+ test 
+
 }
 `
 
