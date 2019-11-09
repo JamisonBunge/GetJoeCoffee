@@ -1,0 +1,104 @@
+html, body {
+  margin:0;
+  padding:0;
+  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  /* height: calc(var(--vh, 1vh) * 100); */
+  overflow:hidden;
+  background: #FFFAED;
+}
+
+@media all and (orientation: landscape) {
+
+    #map {
+        width: 100vh;
+        height:100vh;
+        /* height: calc(100vw * (9/16)); */
+        background: #FFFAED;;
+        background: rgb(229, 180, 148);
+        position: absolute;
+        right:0;
+      }
+
+      #options {
+        position: absolute;
+        /* height: calc(100vh*(3/4)); */
+        height:65%;
+        width: calc(100vw - 100vh);
+        left:0;
+        top:35%;
+        background: #FFFAED;
+        background: rgb(193, 238, 184);
+
+  }
+  #title {
+        background: #FFFAED;
+        position: absolute;
+        /* height: calc(100vh*(1/4)); */
+        height:35%;
+        width: calc(100vw - 100vh);
+        left:0;
+        top:0;
+        text-align: center;
+        background: rgb(172, 195, 230);
+}
+
+
+.button {
+  width:80%;
+  height:20%;
+  position: absolute;
+  left: 10%;
+  top:10%;
+  font-size: 30px;
+}
+}
+
+  @media all and (orientation: portrait) {
+
+    #map {
+        width: 100vw;
+        height:100vw;
+        /* height: calc(100vw * (9/16)); */
+        background: #FFFAED;
+        position: absolute;
+        left: 50%;
+        background: rgb(229, 180, 148);
+        transform: translate(-50%, 0);
+        top: 15.5%;
+        /* top: calc(100vh - 100%); */
+
+
+    }
+
+    #options {
+      height: calc((100vh - 100vw)/2.5);
+      /* height:30%; */
+      width: 100vw;
+      position: absolute;
+      bottom:0;
+      background: rgb(193, 238, 184);
+
+  }
+
+  #title {
+      /* height: calc((100vh - 100vw)/2); */
+      height:15%;
+      width: 100vw;
+      position: absolute;
+      top:0;
+      background:#FFFAED;
+      text-align: center;
+
+      background: rgb(172, 195, 230);
+  }
+
+    .button {
+      width:80vw;
+      height:40%;
+      position: absolute;
+      left: 10%;
+      top:10%;
+      font-size: 30px;
+
+    }
+}
