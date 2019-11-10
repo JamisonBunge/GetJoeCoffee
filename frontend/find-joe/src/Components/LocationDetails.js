@@ -12,7 +12,7 @@ class LocationDetails extends Component {
     render() {
 
         let data = this.props
-        console.log(data);
+        // console.log(data);
 
         return(
             <div id="spots">

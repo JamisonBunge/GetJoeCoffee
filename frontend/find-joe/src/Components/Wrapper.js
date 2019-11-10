@@ -10,13 +10,17 @@ class Wrapper extends Component {
     
     constructor(props) {
         super(props);
+            this.state  = {
+                currLoc: {'lat': '40.807537','lng':'-73.962570'}
+            };
     }
 
 
     render() {
         
-        let data = this.props.data
-        //console.log(data);
+        let data = this.props.data;
+       
+        // console.log(data)
 
         if (data.loading === true || data.placesAt === undefined) {
             return(
@@ -46,36 +50,18 @@ class Wrapper extends Component {
 
             );
         }
-
-
-
-
-        // return(
-        //     <div>
-        //         <LocationDetails chain={this.placesAt.chain} />
-        //         <div id="options">
-        //         <form>
-        //             <button type="button" className="button">Locate</button>
-        //         </form>
-        //         </div>
-
-        //         <div id="title">
-        //         <h1>Get Joe Coffee :)</h1>
-        //         </div>
-        //         <div id="map"><MapComponent /></div>
-        //     </div>
-        // );
-        
     }
 
 }
 
 export default graphql(getCoffeeLocationsQuery, {
   options: (props) => {
+    console.log("this is the props: ");
+    console.log(props.selectedLocation.lat)
     return {
       variables: {
-        lat: '40.807537', 
-        lng: '-73.962570'
+        lat: props.selectedLocation.lat,
+        lng: props.selectedLocation.lng
       }
     }
   }
