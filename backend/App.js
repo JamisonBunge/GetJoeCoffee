@@ -7,9 +7,16 @@ type Query {
 	places: Places
 },
 type Places {
-	quick: String,
-	hipster: String,
-	sitdown: String
+	quick: Spot,
+	chain: Spot,
+	sitdown: Spot
+}
+type Spot {
+	name: String,
+	lat: String,
+	lng: String,
+	distance: String,
+	time: String
 }
 `;
 
