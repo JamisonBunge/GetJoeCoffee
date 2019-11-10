@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import ApolloClient from 'apollo-boost';
-import {ApolloProvider} from 'react-apollo';
+import { ApolloProvider } from 'react-apollo';
 import LocationDetails from './Components/LocationDetails';
 import MapComponent from './Components/MapComponent';
 
@@ -19,7 +19,7 @@ class App extends Component {
 
   render() {
     return (
-      <ApolloProvider client = {client}>
+      <ApolloProvider client={client}>
         <div className="App">
           {/* <LocationDetails /> */}
 
@@ -33,7 +33,7 @@ class App extends Component {
           </div>
           <div id="map"><MapComponent /></div>
         </div>
-      </ApolloProvider> 
+      </ApolloProvider>
     );
   }
 

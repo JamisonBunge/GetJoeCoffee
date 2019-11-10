@@ -9,6 +9,17 @@ class Places extends RESTDataSource {
     willSendRequest(request) {
         //request.headers.set('key', this.apiKey);
     }
+
+    async useDistanceAPI(collections) {
+
+        //ADD DISTANCE PROPERTY
+        //ADD TIME PROPERTY
+        var result = await this.get("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=Washington,DC&destinations=New+York+City,NY&key=" +
+            + this.ClientID)
+        console.log(result.results)
+    }
+
+
     async usePlacesAPI() {
         var result = await this.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=40.807537,-73.962570&radius=1500&type=cafe&&key=" + this.ClientID)
         //console.log("https://maps.googleapis.com/maps/api/place/textsearch/json?query=123+main+street.i&location=42.3675294,-71.186966&radius=1000&key" + this.ClientID)
@@ -59,7 +70,8 @@ class Places extends RESTDataSource {
     }
     async getPlaces() {
         let collections = await this.usePlacesAPI();
-        console.log(collections);
+        collections = await this.useDistanceAPI(collections);
+        // console.log(collections);
 
         return { "quick": "starbucks", "hipster": "joes", "sitdown": "new york basics" }
     }
