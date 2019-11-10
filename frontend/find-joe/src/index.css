@@ -23,15 +23,15 @@ html, body {
 }
 
 #chain {
-  background: rgb(66, 141, 253);
+  background: rgb(87, 121, 253);
 }
 
 #quick {
-  background: rgb(43, 214, 80);
+  background: rgb(122, 73, 253);
 }
 
 #sitdown {
-  background: rgb(213, 231, 53);
+  background: rgb(222, 69, 156);
 }
 
 @media all and (orientation: landscape) {

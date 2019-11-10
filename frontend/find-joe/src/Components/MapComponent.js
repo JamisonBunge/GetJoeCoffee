@@ -31,13 +31,22 @@ class MapComponent extends Component {
 
                 <Marker position={{ lat: data.curLat, lng: data.curLng}} />
                 <Marker 
-                    position={{ lat: data.chain.lat, lng: data.chain.lng}} />
+                    position={{ lat: data.chain.lat, lng: data.chain.lng}}
+                    icon={{
+                        url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+                    }} />
 
                 <Marker 
-                    position={{ lat: data.sitdown.lat, lng: data.sitdown.lng}} />
+                    position={{ lat: data.sitdown.lat, lng: data.sitdown.lng}}
+                    icon={{
+                        url: "http://maps.google.com/mapfiles/ms/icons/pink-dot.png",
+                    }} />
 
                 <Marker 
-                    position={{ lat: data.quick.lat, lng: data.quick.lng}} />
+                    position={{ lat: data.quick.lat, lng: data.quick.lng}}
+                    icon={{
+                        url: "http://maps.google.com/mapfiles/ms/icons/purple-dot.png",
+                    }} />
 
 
                 </Map>
