@@ -26,23 +26,27 @@ class Places extends RESTDataSource {
     }
 
 
-    async usePlacesAPI() {
+    async usePlacesAPI(lat, lng) {
 
         //COMES FROM FRONT END
-        let curLat = 40.807537;
-        let curLng = -73.962570;
+        let curLat = lat;
+        let curLng = lng;
 
-        //princeton
-        curLat = 40.350121
-        curLng = -74.652781
-
-
-        //fredonia
-        curLat = 42.434960
-        curLng = -79.335386
+        // //princeton
+        // curLat = 40.350121
+        // curLng = -74.652781
 
 
-        var result = await this.get(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${curLat},${curLng}&radius=3500&type=cafe&&key=` + this.ClientID)
+        // //fredonia
+        // curLat = 42.434960
+        // curLng = -79.335386
+
+        // //timesquare
+        // curLat = 40.757972
+        // curLng = -73.985556
+
+
+        var result = await this.get(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${curLat},${curLng}&radius=1500&type=cafe&&key=` + this.ClientID)
         //console.log("https://maps.googleapis.com/maps/api/place/textsearch/json?query=123+main+street.i&location=42.3675294,-71.186966&radius=1000&key" + this.ClientID)
         //console.log("THIS:");
         //  console.log(result)
@@ -97,8 +101,11 @@ class Places extends RESTDataSource {
         // for (let x of chains) { process.stdout.write(x.name + ", ") }
         return { "chainList": chains, "sitdownList": sitdowns, "quickList": quicks }
     }
-    async getPlaces() {
-        let collections = await this.usePlacesAPI();
+    async getPlaces(lat, lng) {
+
+        console.log(lat)
+        console.log(lng)
+        let collections = await this.usePlacesAPI(lat, lng);
 
         collections.quickList.sort((a, b) => (a.distance.split(" ")[0] - b.distance.split(" ")[0]));
         collections.chainList.sort((a, b) => (a.distance.split(" ")[0] - b.distance.split(" ")[0]));
@@ -119,7 +126,7 @@ class Places extends RESTDataSource {
         //collections = await this.useDistanceAPI(collections);
 
 
-        console.log(collections);
+        //console.log(collections);
 
         return { "quick": quickChoice, "chain": chainChoice, "sitdown": sitdownChoice }
     }

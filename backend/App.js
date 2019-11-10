@@ -4,7 +4,7 @@ const Places = require('./DataSources/Places')
 const schema = gql`
 type Query {
 	test: String,
-	places: Places
+	placesAt(lat: String!,lng: String!): Places
 },
 type Places {
 	quick: Spot,
@@ -23,7 +23,8 @@ type Spot {
 const resolvers = {
 	Query: {
 		test: () => { return "temp" },
-		places: async (parent, { location }, { dataSources }) => dataSources.Places.getPlaces(),
+		// places: async (parent, { lat, lng }, { dataSources }) => dataSources.Places.getPlaces(lat,lng),
+		placesAt: async (parent, { lat, lng }, { dataSources }) => dataSources.Places.getPlaces(lat, lng),
 	},
 	// ,
 };
