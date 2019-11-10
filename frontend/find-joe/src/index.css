@@ -22,21 +22,16 @@ html, body {
   background: #FFFAED;
 }
 
-
-#spots {
-  display: flex;
-}
-
 #chain {
-  flex: 0 0 33%;
+  background: rgb(66, 141, 253);
 }
 
 #quick {
-  flex: 0 0 33%;
+  background: rgb(43, 214, 80);
 }
 
 #sitdown {
-  flex: 0 0 33%;
+  background: rgb(224, 64, 64);
 }
 
 @media all and (orientation: landscape) {

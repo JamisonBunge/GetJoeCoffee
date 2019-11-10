@@ -28,8 +28,9 @@ class Wrapper extends Component {
             return(
                 
             <div>
+                <div id="map"><MapComponent /></div>
                 <div id="title">
-                    <h1>Get Joe Coffee :)</h1>
+                    <h2>Get Joe Coffee :)</h2>
                     <LocationDetails chain={placesAt.chain} sitdown={placesAt.sitdown} quick={placesAt.quick} />
                 </div>
                 
@@ -40,7 +41,7 @@ class Wrapper extends Component {
                 </div>
 
                 
-                {/* <div id="map"><MapComponent /></div> */}
+                
             </div>
 
             );
