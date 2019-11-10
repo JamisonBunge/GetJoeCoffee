@@ -14,21 +14,56 @@ class Wrapper extends Component {
 
 
     render() {
-        return(
+        
+        let data = this.props.data
+        //console.log(data);
+
+        if (data.loading === true || data.placesAt === undefined) {
+            return(
+                <div><p>Loading...</p></div>
+            );
+        } else {
+
+            let placesAt = data.placesAt;
+            return(
+                
             <div>
-                <LocationDetails />
+                <div id="title">
+                    <h1>Get Joe Coffee :)</h1>
+                    <LocationDetails chain={placesAt.chain} sitdown={placesAt.sitdown} quick={placesAt.quick} />
+                </div>
+                
                 <div id="options">
                 <form>
                     <button type="button" className="button">Locate</button>
                 </form>
                 </div>
 
-                <div id="title">
-                <h1>Get Joe Coffee :)</h1>
-                </div>
-                <div id="map"><MapComponent /></div>
+                
+                {/* <div id="map"><MapComponent /></div> */}
             </div>
-        );
+
+            );
+        }
+
+
+
+
+        // return(
+        //     <div>
+        //         <LocationDetails chain={this.placesAt.chain} />
+        //         <div id="options">
+        //         <form>
+        //             <button type="button" className="button">Locate</button>
+        //         </form>
+        //         </div>
+
+        //         <div id="title">
+        //         <h1>Get Joe Coffee :)</h1>
+        //         </div>
+        //         <div id="map"><MapComponent /></div>
+        //     </div>
+        // );
         
     }
 

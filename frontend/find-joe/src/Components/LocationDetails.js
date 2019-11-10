@@ -10,22 +10,25 @@ class LocationDetails extends Component {
 
 
     render() {
-        // let data = this.props.data;
-        // console.log(data);
 
-        // if (data.loading === true || data.test === undefined) {
-        //     return(
-        //         <div><p>Loading...</p></div>
-        //     );
-        // } else {
-        //     return(
-        //         <div>
-        //             <p>{data.test}</p>
-        //         </div>
+        let data = this.props
+        console.log(data);
 
-        //     );
-        // }
-        return(<div></div>);
+        return(
+            <div id="spots">
+                <div id="chain">
+                    <h2>Chain</h2>
+                </div>
+                <div id="quick">
+                    <h2>Quick</h2>
+                </div>
+                <div id="sitdown">
+                    <h2>Sitdown</h2>
+                </div>
+            </div>
+
+        );
+
         
     }
 
