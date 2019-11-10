@@ -8,19 +8,19 @@ const mapStyles = {
     height: '100%',
 };
 
-const searchArea = {
-    UL: { lat: 40.810563, lng: -73.96211 },
-    UR: { lat: 40.806997, lng: -73.953520 },
-    BL: { lat: 40.785251, lng: -73.979185 },
-    BR: { lat: 40.782083, lng: -73.971761 },
-}
+// const searchArea = {
+//     UL: { lat: 40.810563, lng: -73.96211 },
+//     UR: { lat: 40.806997, lng: -73.953520 },
+//     BL: { lat: 40.785251, lng: -73.979185 },
+//     BR: { lat: 40.782083, lng: -73.971761 },
+// }
 
-let calculatePlacement = () => {
+// let calculatePlacement = () => {
 
-    let widthRange = searchArea.UL.lat - searchArea.UR.lat;
-    let lengthRange = searchArea.UL.long - searchArea.BR.long;
+//     let widthRange = searchArea.UL.lat - searchArea.UR.lat;
+//     let lengthRange = searchArea.UL.long - searchArea.BR.long;
 
-};
+// };
 
 
 
