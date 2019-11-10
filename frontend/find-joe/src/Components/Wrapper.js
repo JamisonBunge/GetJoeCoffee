@@ -30,11 +30,11 @@ class Wrapper extends Component {
             return(
                 
             <div>
-                <div id="map"><MapComponent curLat={data.variables.lat} curLng={data.variables.lng} chain={placesAt.chain} sitdown={placesAt.sitdown} quick={placesAt.quick}/></div>
                 <div id="title">
-                    <h2>Get Joe Coffee :)</h2>
+                    <h1>Get Joe Coffee :)</h1>
                     <LocationDetails chain={placesAt.chain} sitdown={placesAt.sitdown} quick={placesAt.quick} />
                 </div>
+                <div id="map"><MapComponent curLat={data.variables.lat} curLng={data.variables.lng} chain={placesAt.chain} sitdown={placesAt.sitdown} quick={placesAt.quick}/></div>
 
             </div>
 
