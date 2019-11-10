@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
-import LocationDetails from './Components/LocationDetails';
-import MapComponent from './Components/MapComponent';
 import Wrapper from './Components/Wrapper';
 
 
@@ -22,18 +20,7 @@ class App extends Component {
     return (
       <ApolloProvider client={client}>
         <div className="App">
-          <Wrapper>
-            {/* <LocationDetails />
-            <div id="options">
-              <form>
-                <button type="button" className="button">Locate</button>
-              </form>
-            </div>
-            <div id="title">
-              <h1>Get Joe Coffee :)</h1>
-            </div>
-            <div id="map"><MapComponent /></div> */}
-          </Wrapper>
+          <Wrapper />
         </div>
         
       </ApolloProvider>
