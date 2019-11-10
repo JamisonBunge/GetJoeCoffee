@@ -14,6 +14,9 @@ class App extends Component {
 
   constructor(props) {
     super(props);
+    this.state  = {
+      currLoc: {'lat': '40.807537','lng':'-73.962570'}
+  };
   }
 
   // Used as a placeholder for now to demonstrate different locations.
@@ -26,7 +29,8 @@ class App extends Component {
     let rand = Math.floor(Math.random()*3);
     let selectedLocation = locations[rand];
     console.log(selectedLocation);
-    return selectedLocation;
+    this.setState({currLoc: selectedLocation})
+    //return selectedLocation;
 };
 
 
@@ -35,7 +39,12 @@ class App extends Component {
     return (
       <ApolloProvider client={client}>
         <div className="App">
-          <Wrapper selectedLocation={this.chooseRandomLocation()} />
+          <Wrapper selectedLocation={this.state.currLoc} />
+          <div id="options">
+              <form>
+                  <button type="button" className="button" onClick={this.chooseRandomLocation}>Locate</button>
+              </form>
+          </div>
         </div>
         
       </ApolloProvider>

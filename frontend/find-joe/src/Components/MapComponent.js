@@ -1,38 +1,23 @@
 import React, { Component } from 'react';
 // import { graphql } from 'react-apollo';
 // import { testQuery } from '../Queries/queries';
-import { Map, GoogleApiWrapper } from 'google-maps-react';
+import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 
 const mapStyles = {
     width: '100%',
     height: '100%',
 };
 
-// const searchArea = {
-//     UL: { lat: 40.810563, lng: -73.96211 },
-//     UR: { lat: 40.806997, lng: -73.953520 },
-//     BL: { lat: 40.785251, lng: -73.979185 },
-//     BR: { lat: 40.782083, lng: -73.971761 },
-// }
-
-// let calculatePlacement = () => {
-
-//     let widthRange = searchArea.UL.lat - searchArea.UR.lat;
-//     let lengthRange = searchArea.UL.long - searchArea.BR.long;
-
-// };
-
-
 
 class MapComponent extends Component {
 
-    // constructor(props) {
-    //     super(props);
-    // }
+    constructor(props) {
+        super(props);
+    }
 
     render() {
-        //let data = this.props.data;
-        //console.log(data);
+        let data = this.props;
+        console.log(data);
 
         return (
             <div>
@@ -40,8 +25,20 @@ class MapComponent extends Component {
                     google={this.props.google}
                     zoom={15}
                     style={mapStyles}
-                    initialCenter={{ lat: 40.807694, lng: -73.962256 }}
+                    initialCenter={{ lat: data.curLat, lng: data.curLng }}
+                    center = {{ lat: data.curLat, lng: data.curLng }}
                 >
+
+                <Marker position={{ lat: data.curLat, lng: data.curLng}} />
+                <Marker 
+                    position={{ lat: data.chain.lat, lng: data.chain.lng}} />
+
+                <Marker 
+                    position={{ lat: data.sitdown.lat, lng: data.sitdown.lng}} />
+
+                <Marker 
+                    position={{ lat: data.quick.lat, lng: data.quick.lng}} />
+
 
                 </Map>
             </div>

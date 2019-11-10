@@ -7,16 +7,22 @@ query($lat: String!, $lng: String!) {
             name
             distance
             time
+            lat
+            lng
         }
         chain {
             name
             distance
             time
+            lat
+            lng
         }
         quick {
             name
             distance
             time
+            lat
+            lng
         }
     }
 }

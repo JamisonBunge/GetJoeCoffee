@@ -10,9 +10,7 @@ class Wrapper extends Component {
     
     constructor(props) {
         super(props);
-            this.state  = {
-                currLoc: {'lat': '40.807537','lng':'-73.962570'}
-            };
+
     }
 
 
@@ -20,7 +18,7 @@ class Wrapper extends Component {
         
         let data = this.props.data;
        
-        // console.log(data)
+        //  console.log(data.variables.lat);
 
         if (data.loading === true || data.placesAt === undefined) {
             return(
@@ -32,20 +30,12 @@ class Wrapper extends Component {
             return(
                 
             <div>
-                <div id="map"><MapComponent /></div>
+                <div id="map"><MapComponent curLat={data.variables.lat} curLng={data.variables.lng} chain={placesAt.chain} sitdown={placesAt.sitdown} quick={placesAt.quick}/></div>
                 <div id="title">
                     <h2>Get Joe Coffee :)</h2>
                     <LocationDetails chain={placesAt.chain} sitdown={placesAt.sitdown} quick={placesAt.quick} />
                 </div>
-                
-                <div id="options">
-                <form>
-                    <button type="button" className="button">Locate</button>
-                </form>
-                </div>
 
-                
-                
             </div>
 
             );
@@ -56,8 +46,6 @@ class Wrapper extends Component {
 
 export default graphql(getCoffeeLocationsQuery, {
   options: (props) => {
-    console.log("this is the props: ");
-    console.log(props.selectedLocation.lat)
     return {
       variables: {
         lat: props.selectedLocation.lat,
