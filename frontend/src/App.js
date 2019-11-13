@@ -53,11 +53,11 @@ class App extends Component {
         <ApolloProvider client={client}>
           <div className="App">
             <Wrapper selectedLocation={this.state.currLoc} lat={this.props.coords.latitude} lng={this.props.coords.longitude} />
-            <div id="options">
+            {/* <div id="options">
               <form>
                 <button type="button" className="button" onClick={this.chooseRandomLocation}>Locate</button>
               </form>
-            </div>
+            </div> */}
           </div>
 
         </ApolloProvider>

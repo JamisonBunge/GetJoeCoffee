@@ -12,6 +12,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
@@ -27,6 +28,7 @@ html, body {
   /* height: calc(var(--vh, 1vh) * 100); */
   overflow:hidden;
   background: #FFFAED;
+  background: rgb(150, 152, 100);
 }
 
 #chain {
@@ -57,7 +59,7 @@ h1 {
   background: rgba(222, 69, 156, 0.418);
   display: inline-block;
   width: 85%;
- 
+
 }
 h5 {
   margin: 4% 0px 4px 0px;
@@ -125,7 +127,7 @@ h5 {
         left: 50%;
         background: rgb(229, 180, 148);
         transform: translate(-50%, 0);
-        top: 25%;
+        bottom:2%;
         /* top: calc(100vh - 100%); */
 
 
@@ -149,7 +151,6 @@ h5 {
       top:0;
       background:#FFFAED;
       text-align: center;
-
       background: rgb(233, 228, 210);
   }
 
@@ -167,4 +168,3 @@ h5 {
     }
 
 }
-
