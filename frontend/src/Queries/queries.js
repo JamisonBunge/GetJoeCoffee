@@ -1,6 +1,6 @@
 import { gql } from "apollo-boost";
 
-const getCoffeeLocationsQuery = gql` 
+const getCoffeeLocationsQuery = gql`
 query($lat: String!, $lng: String!) {
     placesAt(lat: $lat, lng: $lng) {
         sitdown {

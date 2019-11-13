@@ -3,6 +3,7 @@ import './App.css';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 import Wrapper from './Components/Wrapper';
+import { geolocated } from 'react-geolocated'
 
 
 const client = new ApolloClient({
@@ -36,19 +37,32 @@ class App extends Component {
 
 
   render() {
-    return (
-      <ApolloProvider client={client}>
-        <div className="App">
-          <Wrapper selectedLocation={this.state.currLoc} />
-          <div id="options">
-            <form>
-              <button type="button" className="button" onClick={this.chooseRandomLocation}>Locate</button>
-            </form>
-          </div>
-        </div>
 
-      </ApolloProvider>
-    );
+    console.log(this.props)
+    if (!this.props.isGeolocationEnabled || !this.props.isGeolocationAvailable) {
+      return (<div>Either location is not avaible or turned off</div>)
+    } else if (!this.props.coords) {
+      return (
+        <div><p>Loading...</p></div>
+      );
+    }
+    else {
+
+      console.log(this.props.coords)
+      return (
+        <ApolloProvider client={client}>
+          <div className="App">
+            <Wrapper selectedLocation={this.state.currLoc} lat={this.props.coords.latitude} lng={this.props.coords.longitude} />
+            <div id="options">
+              <form>
+                <button type="button" className="button" onClick={this.chooseRandomLocation}>Locate</button>
+              </form>
+            </div>
+          </div>
+
+        </ApolloProvider>
+      );
+    }
   }
 
 
@@ -64,4 +78,11 @@ class App extends Component {
 //     }
 //   }
 // })(App);
-export default App;
+//export default App;
+
+export default geolocated({
+  positionOptions: {
+    enableHighAccuracy: false,
+  },
+  userDecisionTimeout: 5000,
+})(App);

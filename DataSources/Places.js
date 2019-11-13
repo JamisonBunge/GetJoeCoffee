@@ -46,7 +46,7 @@ class Places extends RESTDataSource {
         // curLng = -73.985556
 
 
-        var result = await this.get(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${curLat},${curLng}&radius=1500&type=cafe&&key=` + this.ClientID)
+        var result = await this.get(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${curLat},${curLng}&radius=3000&type=cafe&&key=` + this.ClientID)
         //console.log("https://maps.googleapis.com/maps/api/place/textsearch/json?query=123+main+street.i&location=42.3675294,-71.186966&radius=1000&key" + this.ClientID)
         //console.log("THIS:");
         //  console.log(result)
